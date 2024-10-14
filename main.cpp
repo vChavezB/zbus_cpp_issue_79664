@@ -1,4 +1,4 @@
-#include <zephyr/kernel/zbus.hpp>
+#include <zephyr/zbus/zbus.h>
 
 ZBUS_CHAN_DEFINE(zbus_chan_1,
                  int,

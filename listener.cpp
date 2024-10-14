@@ -1,4 +1,4 @@
-#include <zephyr/kernel/zbus.hpp>
+#include <zephyr/zbus/zbus.h>
 
 static void channel_obs_cb(const struct zbus_channel *chan)
 {
