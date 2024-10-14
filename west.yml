@@ -7,7 +7,7 @@ manifest:
   projects:
     - name: zephyr
       remote: zephyrproject-rtos
-      revision: 1dcd5999824716c05b72384c02da12ebf73064c6
+      revision: 744f67c58773b196791339da14d4431df1c2df2f
       path: zephyr
       import:
         name-allowlist:
