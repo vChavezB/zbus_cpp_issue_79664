@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        mr_version: [main, v3.7.0]
+        mr_version: [1ed77cb50ce33cce9c87f88c1374932bf6be85fb]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
