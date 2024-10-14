@@ -14,8 +14,9 @@ jobs:
     env:
       CMAKE_PREFIX_PATH: /opt/toolchains
     strategy:
+      fail-fast: false
       matrix:
-        mr_version: [main, 3.7.0]
+        mr_version: [main, v3.7.0]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
