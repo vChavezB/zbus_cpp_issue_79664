@@ -8,12 +8,14 @@ on:
   pull_request:
 
 jobs:
-
   build:
     runs-on: ubuntu-22.04
     container: ghcr.io/zephyrproject-rtos/ci:v0.26.15
     env:
       CMAKE_PREFIX_PATH: /opt/toolchains
+    strategy:
+      matrix:
+        mr_version: [main, 3.7.0]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -21,7 +23,7 @@ jobs:
           path: app
       - name: Initialize
         run: |
-          west init --mr main
+          west init --mr ${{ matrix.mr_version }}
           west update -o=--depth=1 -n
       - name: Build
         run: |
