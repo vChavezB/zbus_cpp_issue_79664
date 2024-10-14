@@ -26,4 +26,4 @@ jobs:
           west update -o=--depth=1 -n
       - name: Build
         run: |
-          west build zbus_cpp_issue_79664 -b native_posix_64
+          west build zbus_cpp_issue_79664 -b native_posix
