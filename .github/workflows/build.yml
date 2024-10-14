@@ -13,10 +13,6 @@ jobs:
     container: ghcr.io/zephyrproject-rtos/ci:v0.26.15
     env:
       CMAKE_PREFIX_PATH: /opt/toolchains
-    strategy:
-      fail-fast: false
-      matrix:
-        mr_version: [1ed77cb50ce33cce9c87f88c1374932bf6be85fb]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,7 +20,7 @@ jobs:
           path: app
       - name: Initialize
         run: |
-          west init --mr ${{ matrix.mr_version }}
+          west init -l app
           west update -o=--depth=1 -n
       - name: Build
         run: |
