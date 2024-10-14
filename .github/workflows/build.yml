@@ -17,13 +17,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          submodules: true
+        path: app
+      
 
       - name: Initialize
         run: |
+          ls
           west init --mr main
           west update -o=--depth=1 -n
+          ls
       - name: Build
         run: |
-          west build zbus_cpp_issue_79664 -b native_posix
+          ls
+          west build app -b native_posix
